@@ -1,0 +1,111 @@
+:root {
+	--bg-color: #191919;
+	--accent-color: #3bc3d3;
+	--hover-color: #3bc4d33d;
+	--white: #fafbfd;
+}
+
+html {
+	box-sizing: border-box;
+	scroll-behavior: smooth;
+}
+
+*,
+*:before,
+*:after {
+	box-sizing: inherit;
+}
+
+body {
+	font-family: 'Lato', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI',
+		Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+	background-color: var(--bg-color);
+	margin: 0;
+	padding: 0;
+}
+
+main {
+	max-width: 1280px;
+	padding: 0 2rem;
+}
+
+header {
+	padding: 11rem 4rem 0 4rem;
+	min-height: 100vh;
+}
+
+nav {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	height: 5rem;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 0 4rem;
+	color: var(--white);
+}
+
+.logo {
+	display: flex;
+	align-items: center;
+}
+
+.logo__image {
+	width: 3rem;
+	height: 3.5rem;
+	margin-right: 1rem;
+}
+
+.logo__image path {
+	fill: var(--white);
+}
+
+.logo__text {
+	display: block;
+	width: fit-content;
+	height: fit-content;
+	margin: 0;
+
+	font-size: 18px;
+	font-weight: bold;
+}
+
+.nav {
+	display: flex;
+	padding: 0;
+	margin: 0;
+	height: inherit;
+	list-style-type: none;
+	align-content: center;
+	font-size: 1rem;
+}
+
+.nav__item {
+	width: 100px;
+	height: inherit;
+}
+
+.nav__link {
+	display: grid;
+	width: inherit;
+	height: inherit;
+	place-content: center;
+	color: var(--white);
+	text-decoration: none;
+}
+
+.nav__item:hover {
+	background-color: var(--hover-color);
+	border-bottom: 2px solid var(--accent-color);
+	font-weight: bold;
+}
+
+.proyects {
+	height: 100vh;
+}
+
+.contact {
+	height: 100vh;
+}
