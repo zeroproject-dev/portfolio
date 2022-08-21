@@ -1,10 +1,65 @@
 ---
 import Card from "./Card.astro";
+
+const projects = [
+  {
+    title: "Project 1",
+    description:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quidem.",
+    link: "https://www.google.com",
+    image: "https://source.unsplash.com/random/400x400",
+  },
+  {
+    title: "Project 2",
+    description:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quidem.",
+    link: "https://www.google.com",
+    image: "https://source.unsplash.com/random/400x400",
+  },
+  {
+    title: "Project 3",
+    description:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quidem.",
+    link: "https://www.google.com",
+    image: "https://source.unsplash.com/random/400x400",
+  },
+  {
+    title: "Project 1",
+    description:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quidem.",
+    link: "https://www.google.com",
+    image: "https://source.unsplash.com/random/400x400",
+  },
+  {
+    title: "Project 2",
+    description:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quidem.",
+    link: "https://www.google.com",
+    image: "https://source.unsplash.com/random/400x400",
+  },
+  {
+    title: "Project 3",
+    description:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quidem.",
+    link: "https://www.google.com",
+    image: "https://source.unsplash.com/random/400x400",
+  },
+];
 ---
 
 <section id="projects">
   <h2 class="projects__title">Proyectos</h2>
-  <div class="projects"></div>
+  <div class="projects">
+    {
+      projects.map((project) => (
+        <Card
+          href={project.link}
+          body={project.description}
+          title={project.title}
+        />
+      ))
+    }
+  </div>
 </section>
 
 <style>
@@ -14,5 +69,22 @@ import Card from "./Card.astro";
     align-items: center;
     width: 100%;
     height: 100vh;
+  }
+
+  .projects__title {
+    margin-top: 9rem;
+    margin-bottom: 3rem;
+    font-size: 48px;
+  }
+
+  .projects {
+    display: grid;
+    /* grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); */
+    grid-template-columns: repeat(3, 300px);
+    column-gap: 6rem;
+    row-gap: 4rem;
+    place-content: center;
+    width: 100%;
+    padding: 0 30px;
   }
 </style>
