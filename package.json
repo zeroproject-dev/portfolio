@@ -1,13 +1,14 @@
 {
-  "name": "portfolio",
+  "name": "@example/basics",
+  "version": "0.0.1",
   "private": true,
-  "version": "0.0.0",
   "scripts": {
-    "dev": "vite",
-    "build": "vite build",
-    "preview": "vite preview"
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview"
   },
   "devDependencies": {
-    "vite": "^2.9.9"
+    "astro": "^1.0.0-beta.73"
   }
 }

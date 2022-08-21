@@ -1,0 +1,83 @@
+<nav>
+  <div class="logo">
+    <img class="logo__image" src="assets/images/Logo.svg" alt="Logo Zeroproject" />
+    <p class="logo__text">zero</p>
+  </div>
+  <ul class="nav">
+    <li class="nav__item">
+      <a class="nav__link" href="#inicio">Inicio</a>
+    </li>
+    <li class="nav__item">
+      <a class="nav__link" href="#proyectos">Proyectos</a>
+    </li>
+    <li class="nav__item">
+      <a class="nav__link" href="#contacto">Contacto</a>
+    </li>
+  </ul>
+</nav>
+
+
+<style>
+  nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 4rem;
+  }
+
+  .logo {
+    display: flex;
+    align-items: center;
+  }
+
+  .logo__image {
+    width: 3rem;
+    height: 3.5rem;
+    margin-right: 1rem;
+  }
+
+  .logo__text {
+    display: block;
+    width: fit-content;
+    height: fit-content;
+    margin: 0;
+
+    font-size: 18px;
+    font-weight: bold;
+  }
+
+  .nav {
+    display: flex;
+    padding: 0;
+    margin: 0;
+    height: inherit;
+    list-style-type: none;
+    align-content: center;
+    font-size: 1rem;
+  }
+
+  .nav__item {
+    width: 100px;
+    height: inherit;
+  }
+
+  .nav__link {
+    display: grid;
+    width: inherit;
+    height: inherit;
+    place-content: center;
+    color: var(--white);
+    text-decoration: none;
+  }
+
+  .nav__item:hover {
+    background-color: var(--hover-color);
+    border-bottom: 2px solid var(--accent-color);
+    font-weight: bold;
+  }
+</style>
