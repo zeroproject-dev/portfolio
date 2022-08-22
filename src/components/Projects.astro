@@ -50,15 +50,7 @@ const projects = [
 <section id="projects">
   <h2 class="projects__title">Proyectos</h2>
   <div class="projects">
-    {
-      projects.map((project) => (
-        <Card
-          href={project.link}
-          body={project.description}
-          title={project.title}
-        />
-      ))
-    }
+    {projects.map((project) => <Card {...project} />)}
   </div>
 </section>
 
