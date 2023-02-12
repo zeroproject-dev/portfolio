@@ -3,46 +3,46 @@ import Card from "./Card.astro";
 
 const projects = [
   {
-    title: "Project 1",
+    title: "Stream subtitles",
     description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quidem.",
-    link: "https://www.google.com",
-    image: "https://source.unsplash.com/random/400x400",
+      "Genera subtitulos en tiempo real en un mini servidor web local con inteligencia artificial en python.",
+    link: "https://github.com/zeroproject-0/stream-subtitles",
+    image: "",
   },
   {
-    title: "Project 2",
+    title: "Board",
     description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quidem.",
-    link: "https://www.google.com",
-    image: "https://source.unsplash.com/random/400x400",
+    "Pizarra virtual hecha en typescript.",
+    link: "https://board.zeroproject.dev",
+    image: "",
   },
   {
-    title: "Project 3",
+    title: "Dotz",
     description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quidem.",
-    link: "https://www.google.com",
-    image: "https://source.unsplash.com/random/400x400",
+    "Dotz ayuda al manejo de archivos de configuración en linux hecho en rust.",
+    link: "https://github.com/zeroproject-0/dotz",
+    image: "",
   },
   {
-    title: "Project 1",
+    title: "Pomodoro",
     description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quidem.",
-    link: "https://www.google.com",
-    image: "https://source.unsplash.com/random/400x400",
+      "Pomodoro hecho en c++ con interfaz gráfica de Qt6.",
+    link: "https://github.com/zeroproject-0/pomodoro",
+    image: "",
   },
   {
-    title: "Project 2",
+    title: "NucitaBot",
     description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quidem.",
-    link: "https://www.google.com",
-    image: "https://source.unsplash.com/random/400x400",
+      "Bot de discord que permite mediante tts generar audio y reproducirlo en un canal.",
+    link: "https://github.com/zeroproject-0/nucitabot",
+    image: "",
   },
   {
-    title: "Project 3",
+    title: "TpHub",
     description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quidem.",
-    link: "https://www.google.com",
-    image: "https://source.unsplash.com/random/400x400",
+      "TpHub es un plugin para servidores de minecraft spigot que permite almacenar coordenadas y poder teletransportarse a ellas facilmente.",
+    link: "https://github.com/zeroproject-0/tpHub",
+    image: "",
   },
 ];
 ---
@@ -60,19 +60,19 @@ const projects = [
     flex-direction: column;
     align-items: center;
     width: 100%;
-    height: 100vh;
+    min-height: 100vh;
   }
 
   .projects__title {
-    margin-top: 9rem;
+    margin-top: 7rem;
     margin-bottom: 3rem;
     font-size: 48px;
   }
 
   .projects {
     display: grid;
-    /* grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); */
-    grid-template-columns: repeat(3, 300px);
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    place-items: center;
     column-gap: 6rem;
     row-gap: 4rem;
     place-content: center;

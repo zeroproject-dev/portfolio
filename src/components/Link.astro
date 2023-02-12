@@ -1,12 +1,24 @@
 ---
 export interface Props {
-  className: string;
   href: string;
 }
 
-const { href, className } = Astro.props
+const { href } = Astro.props
 ---
 
-<a href={href} class={className} target="_blank" rel="noreferrer noopener">
+<a href={href} class="link" target="_blank" rel="noreferrer noopener">
   <slot />
 </a>
+
+<style>
+  .links__link {
+    display: inline-block;
+    width: fit-content;
+    height: fit-content;
+    cursor: pointer;
+  }
+
+  .links__link:hover > .links__image {
+    filter: drop-shadow(0 0 0.3rem var(--accent-color));
+  }
+</style>

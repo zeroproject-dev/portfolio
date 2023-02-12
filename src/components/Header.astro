@@ -6,6 +6,8 @@ import Link from "./Link.astro";
 <header id="start">
   <Nav />
 
+  <div class="gradient"></div>
+
   <div class="central-index">
     <img
       class="central-index__logo"
@@ -13,46 +15,60 @@ import Link from "./Link.astro";
       alt="Logo Zeroproject"
     />
 
-    <h1 class="central-index__title">Andres Copeticona</h1>
+    <h1 class="central-index__title">Zero project</h1>
     <p class="central-index__paragraph">
-      ¡Hola, bienvenido a mi portfolio de proyectos!
+      Portfolio de proyectos personales y de la comunidad.
     </p>
 
-    <div class="links">
-      <Link href="https://twitter.com/zero_project1" className="links__link">
-        <img
-          class="links__image"
-          src="assets/icons/Twitter icon.svg"
-          alt="Twitter"
-        />
-      </Link>
+  <div class="links">
+    <a
+      target="_blank"
+      rel="noreferrer noopener"
+      href="https://twitter.com/zero_project1"
+      class="links__link"
+    >
+      <img
+        class="links__image"
+        src="assets/icons/Twitter icon.svg"
+        alt="Twitter"
+      />
+    </a>
 
-      <Link href="https://github.com/zeroproject-0" className="links__link">
-        <img
-          class="links__image"
-          src="assets/icons/Github icon.svg"
-          alt="Github"
-        />
-      </Link>
+    <a
+      target="_blank"
+      rel="noreferrer noopener"
+      href="https://github.com/zeroproject-0"
+      class="links__link"
+    >
+      <img
+        class="links__image"
+        src="assets/icons/Github icon.svg"
+        alt="Github"
+      />
+    </a>
 
-      <Link
-        href="https://www.linkedin.com/in/andres-copeticona-a690ba1b8/"
-        className="links__link"
-      >
-        <img
-          class="links__image"
-          src="assets/icons/Linkedin icon.svg"
-          alt="Linkedin"
-        />
-      </Link>
-    </div>
+    <a
+      target="_blank"
+      rel="noreferrer noopener"
+      href="https://www.linkedin.com/in/andres-copeticona-a690ba1b8/"
+      class="links__link"
+    >
+      <img
+        class="links__image"
+        src="assets/icons/Linkedin icon.svg"
+        alt="Linkedin"
+      />
+    </a>
+  </div>
   </div>
 </header>
 
 <style>
   header {
-    padding: 11rem 4rem 0 4rem;
+    padding: 8rem 4rem 0 4rem;
     min-height: 100vh;
+    position: relative;
+    overflow: hidden;
   }
 
   .central-index {
@@ -67,8 +83,27 @@ import Link from "./Link.astro";
   .central-index__logo {
     width: 300px;
     height: 350px;
+  }
 
-    filter: drop-shadow(0 0 0.2rem var(--white));
+  .central-index__title {
+    font-size: 3rem;
+    font-weight: bold;
+    margin-top: 6rem;
+  }
+
+  .central-index__paragraph {
+    font-size: 1.125rem;
+    margin-top: 3rem;
+    font-weight: lighter;
+  }
+
+  .central-index {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
   }
 
   .central-index__title {
@@ -107,134 +142,45 @@ import Link from "./Link.astro";
     filter: drop-shadow(0 0 0.3rem var(--accent-color));
   }
 
-  .proyects {
-    height: 100vh;
+  @keyframes rotate {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
   }
 
-  .contact {
-    height: 100vh;
-  }
+  .gradient {
+    --size: 350px;
+    --speed: 50s;
+    --easing: cubic-bezier(0.8, 0.2, 0.2, 0.8);
 
-  nav {
-    position: fixed;
-    top: 0;
+    width: var(--size);
+    height: var(--size);
+    filter: blur(calc(var(--size) / 5));
+    background: linear-gradient(
+      90deg,
+      hsl(158, 82%, 57%, 85%) 0%,
+      hsl(252, 82%, 57%, 85%) 100%
+    );
+    animation: rotate var(--speed) var(--easing) alternate infinite;
+    border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+    margin: auto;
+    position: absolute;
     left: 0;
     right: 0;
-    height: 5rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 4rem;
+    top: -28%;
+    bottom: 0;
   }
 
-  .logo {
-    display: flex;
-    align-items: center;
+  @media (min-width: 720px) {
+    .gradient {
+      --size: 400px;
+    }
   }
 
-  .logo__image {
-    width: 3rem;
-    height: 3.5rem;
-    margin-right: 1rem;
-  }
-
-  .logo__text {
-    display: block;
-    width: fit-content;
-    height: fit-content;
-    margin: 0;
-
-    font-size: 18px;
-    font-weight: bold;
-  }
-
-  .nav {
-    display: flex;
-    padding: 0;
-    margin: 0;
-    height: inherit;
-    list-style-type: none;
-    align-content: center;
-    font-size: 1rem;
-  }
-
-  .nav__item {
-    width: 100px;
-    height: inherit;
-  }
-
-  .nav__link {
-    display: grid;
-    width: inherit;
-    height: inherit;
-    place-content: center;
-    color: var(--white);
-    text-decoration: none;
-  }
-
-  .nav__item:hover {
-    background-color: var(--hover-color);
-    border-bottom: 2px solid var(--accent-color);
-    font-weight: bold;
-  }
-
-  .central-index {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: 100%;
-  }
-
-  .central-index__logo {
-    width: 300px;
-    height: 350px;
-
-    filter: drop-shadow(0 0 0.2rem var(--white));
-  }
-
-  .central-index__title {
-    font-size: 3rem;
-    font-weight: bold;
-    margin-top: 6rem;
-  }
-
-  .central-index__paragraph {
-    font-size: 1.125rem;
-    margin-top: 3rem;
-    font-weight: lighter;
-  }
-
-  .links {
-    margin-top: 6rem;
-    width: 192px;
-    height: 32px;
-    display: flex;
-    justify-content: space-between;
-  }
-
-  .links__image {
-    width: 32px;
-    height: 32px;
-  }
-
-  .links__link {
-    display: inline-block;
-    width: fit-content;
-    height: fit-content;
-    cursor: pointer;
-  }
-
-  .links__link:hover > .links__image {
-    filter: drop-shadow(0 0 0.3rem var(--accent-color));
-  }
-
-  .proyects {
-    height: 100vh;
-  }
-
-  .contact {
-    height: 100vh;
+  * {
+    z-index: 1;
   }
 </style>

@@ -1,9 +1,56 @@
 ---
+import Link from "./Link.astro";
 ---
 
 <section id="contact">
   <h2 class="contact__title">Contacto</h2>
-  <form id="form"></form>
+
+  <div class="links">
+    <a
+      target="_blank"
+      rel="noreferrer noopener"
+      href="https://twitter.com/zero_project1"
+      class="contact-links__link"
+    >
+      <img
+        class="contact-links__image"
+        src="assets/icons/Twitter icon.svg"
+        alt="Twitter"
+      />
+    </a>
+
+    <a
+      target="_blank"
+      rel="noreferrer noopener"
+      href="https://github.com/zeroproject-0"
+      class="contact-links__link"
+    >
+      <img
+        class="contact-links__image"
+        src="assets/icons/Github icon.svg"
+        alt="Github"
+      />
+    </a>
+
+    <a
+      target="_blank"
+      rel="noreferrer noopener"
+      href="https://www.linkedin.com/in/andres-copeticona-a690ba1b8/"
+      class="contact-links__link"
+    >
+      <img
+        class="contact-links__image"
+        src="assets/icons/Linkedin icon.svg"
+        alt="Linkedin"
+      />
+    </a>
+  </div>
+
+  <footer class="footer">
+    <p>
+      Made with <span class="heart">❤</span>
+    </p>
+  </footer>
 </section>
 
 <style>
@@ -11,13 +58,53 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: space-between;
     width: 100%;
     height: 100vh;
   }
 
   .contact__title {
-    margin-top: 9rem;
+    margin-top: 7rem;
     margin-bottom: 3rem;
     font-size: 48px;
+  }
+
+  .links {
+    display: flex;
+    justify-content: space-between;
+    gap: 3rem;
+  }
+
+  @media (max-width: 768px) {
+    .links {
+      flex-direction: column-reverse;
+      gap: 2rem;
+    }
+  }
+
+  .contact-links__image {
+    width: 128px;
+    height: 128px;
+  }
+
+  .contact-links__link {
+    display: inline-block;
+    width: fit-content;
+    height: fit-content;
+    cursor: pointer;
+  }
+
+  .contact-links__link:hover > .contact-links__image {
+    filter: drop-shadow(0 0 0.8rem var(--accent-color));
+  }
+
+  footer {
+    font-size: 2rem;
+    margin-bottom: 3rem;
+    line-height: 2rem;
+  }
+
+  .heart {
+    color: red;
   }
 </style>

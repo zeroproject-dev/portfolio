@@ -2,7 +2,6 @@
   <div class="logo">
     <img class="logo__image" src="assets/images/Logo.svg" alt="Logo Zeroproject"
     />
-    <p class="logo__text">zero</p>
   </div>
   <ul class="nav">
     <li class="nav__item">
@@ -41,16 +40,6 @@
     margin-right: 1rem;
   }
 
-  .logo__text {
-    display: block;
-    width: fit-content;
-    height: fit-content;
-    margin: 0;
-
-    font-size: 18px;
-    font-weight: bold;
-  }
-
   .nav {
     display: flex;
     padding: 0;
@@ -79,5 +68,15 @@
     background-color: var(--hover-color);
     border-bottom: 2px solid var(--accent-color);
     font-weight: bold;
+  }
+
+  @media (max-width: 768px) {
+    nav {
+      justify-content: center;
+    }
+
+    .logo {
+      display: none;
+    }
   }
 </style>
