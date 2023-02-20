@@ -1,12 +1,11 @@
 ---
-import Link from "./Link.astro";
 ---
 
 <section id="contact">
   <h2 class="contact__title">Contacto</h2>
 
   <div class="links">
-    <a
+    <!--<a
       target="_blank"
       rel="noreferrer noopener"
       href="https://twitter.com/zero_project1"
@@ -17,7 +16,7 @@ import Link from "./Link.astro";
         src="assets/icons/Twitter icon.svg"
         alt="Twitter"
       />
-    </a>
+    </a>-->
 
     <a
       target="_blank"
@@ -72,6 +71,7 @@ import Link from "./Link.astro";
   .links {
     display: flex;
     justify-content: space-between;
+    flex-direction: row-reverse;
     gap: 3rem;
   }
 
