@@ -1,6 +1,6 @@
 ---
 import Nav from "./Nav.astro";
-import Link from "./Link.astro";
+import LinkList from "./LinkList.astro";
 ---
 
 <header id="start">
@@ -20,46 +20,7 @@ import Link from "./Link.astro";
       Portfolio de proyectos personales y de la comunidad.
     </p>
 
-  <div class="links">
-    <!--<a
-      target="_blank"
-      rel="noreferrer noopener"
-      href="https://twitter.com/zero_project1"
-      class="links__link"
-    >
-      <img
-        class="links__image"
-        src="assets/icons/Twitter icon.svg"
-        alt="Twitter"
-      />
-    </a>-->
-
-    <a
-      target="_blank"
-      rel="noreferrer noopener"
-      href="https://github.com/zeroproject-0"
-      class="links__link"
-    >
-      <img
-        class="links__image"
-        src="assets/icons/Github icon.svg"
-        alt="Github"
-      />
-    </a>
-
-    <a
-      target="_blank"
-      rel="noreferrer noopener"
-      href="https://www.linkedin.com/in/andres-copeticona-a690ba1b8/"
-      class="links__link"
-    >
-      <img
-        class="links__image"
-        src="assets/icons/Linkedin icon.svg"
-        alt="Linkedin"
-      />
-    </a>
-  </div>
+    <LinkList size={"small"} />
   </div>
 </header>
 
@@ -116,30 +77,6 @@ import Link from "./Link.astro";
     font-size: 1.125rem;
     margin-top: 3rem;
     font-weight: lighter;
-  }
-
-  .links {
-    margin-top: 6rem;
-    width: 192px;
-    height: 32px;
-    display: flex;
-    justify-content: space-between;
-  }
-
-  .links__image {
-    width: 32px;
-    height: 32px;
-  }
-
-  .links__link {
-    display: inline-block;
-    width: fit-content;
-    height: fit-content;
-    cursor: pointer;
-  }
-
-  .links__link:hover > .links__image {
-    filter: drop-shadow(0 0 0.3rem var(--accent-color));
   }
 
   @keyframes rotate {

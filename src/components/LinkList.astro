@@ -1,0 +1,84 @@
+---
+export interface Props {
+  size: "small" | "large";
+}
+
+const { size } = Astro.props;
+---
+
+<div class={`links-${size}`}>
+  <a
+    target="_blank"
+    rel="noreferrer noopener"
+    href="https://github.com/zeroproject-0"
+    class="links__link"
+  >
+    <img
+      class={`links-${size}__image`}
+      src="assets/icons/Github icon.svg"
+      alt="Github"
+    />
+  </a>
+
+  <a
+    target="_blank"
+    rel="noreferrer noopener"
+    href="https://www.linkedin.com/in/andres-copeticona-a690ba1b8/"
+    class="links__link"
+  >
+    <img
+      class={`links-${size}__image`}
+      src="assets/icons/Linkedin icon.svg"
+      alt="Linkedin"
+    />
+  </a>
+</div>
+
+<style>
+  .links-large {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row-reverse;
+    gap: 3rem;
+  }
+
+  .links-small {
+    margin-top: 6rem;
+    width: 192px;
+    height: 32px;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  @media (max-width: 768px) {
+    .links-large {
+      flex-direction: column-reverse;
+      gap: 2rem;
+    }
+  }
+
+  .links-small__image {
+    width: 32px;
+    height: 32px;
+  }
+
+  .links-large__image {
+    width: 128px;
+    height: 128px;
+  }
+
+  .links__link {
+    display: inline-block;
+    width: fit-content;
+    height: fit-content;
+    cursor: pointer;
+  }
+
+  .links__link:hover > .links-small__image {
+    filter: drop-shadow(0 0 0.8rem var(--accent-color));
+  }
+
+  .links__link:hover > .links-large__image {
+    filter: drop-shadow(0 0 0.8rem var(--accent-color));
+  }
+</style>
