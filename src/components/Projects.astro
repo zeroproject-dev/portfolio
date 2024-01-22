@@ -11,22 +11,20 @@ const projects = [
   },
   {
     title: "Board",
-    description:
-    "Pizarra virtual hecha en typescript.",
+    description: "Pizarra virtual hecha en typescript.",
     link: "https://board.zeroproject.dev",
     image: "",
   },
   {
     title: "Dotz",
     description:
-    "Dotz ayuda al manejo de archivos de configuración en linux hecho en rust.",
+      "Dotz ayuda al manejo de archivos de configuración en linux hecho en rust.",
     link: "https://github.com/zeroproject-0/dotz",
     image: "",
   },
   {
     title: "Pomodoro",
-    description:
-      "Pomodoro hecho en c++ con interfaz gráfica de Qt6.",
+    description: "Pomodoro hecho en c++ con interfaz gráfica de Qt6.",
     link: "https://github.com/zeroproject-0/pomodoro",
     image: "",
   },
@@ -45,10 +43,12 @@ const projects = [
     image: "",
   },
 ];
+
+import { t } from "i18next";
 ---
 
 <section id="projects">
-  <h2 class="projects__title">Proyectos</h2>
+  <h2 class="projects__title">{t("projects.title")}</h2>
   <div class="projects">
     {projects.map((project) => <Card {...project} />)}
   </div>

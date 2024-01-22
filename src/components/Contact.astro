@@ -1,9 +1,11 @@
 ---
 import LinkList from "./LinkList.astro";
+
+import { t } from "i18next";
 ---
 
 <section id="contact">
-  <h2 class="contact__title">Contacto</h2>
+  <h2 class="contact__title">{t("contact.title")}</h2>
 
   <LinkList size={"large"} />
 

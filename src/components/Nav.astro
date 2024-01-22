@@ -1,17 +1,24 @@
+---
+import { t } from "i18next";
+---
+
 <nav>
   <div class="logo">
-    <img class="logo__image" src="assets/images/Logo.svg" alt="Logo Zeroproject"
+    <img
+      class="logo__image"
+      src="assets/images/Logo.svg"
+      alt="Logo Zeroproject"
     />
   </div>
   <ul class="nav">
     <li class="nav__item">
-      <a class="nav__link" href="#start">Inicio</a>
+      <a class="nav__link" href="#start">{t("navbar.home")}</a>
     </li>
     <li class="nav__item">
-      <a class="nav__link" href="#projects">Proyectos</a>
+      <a class="nav__link" href="#projects">{t("navbar.projects")}</a>
     </li>
     <li class="nav__item">
-      <a class="nav__link" href="#contact">Contacto</a>
+      <a class="nav__link" href="#contact">{t("navbar.contact")}</a>
     </li>
   </ul>
 </nav>

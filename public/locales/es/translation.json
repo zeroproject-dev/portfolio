@@ -1,0 +1,16 @@
+{
+  "main": {
+    "welcome": "Bienvenido a mi portolio"
+  },
+  "projects": {
+    "title": "Proyectos"
+  },
+  "contact": {
+    "title": "Contacto"
+  },
+  "navbar": {
+    "home": "Inicio",
+    "projects": "Proyectos",
+    "contact": "Contacto"
+  }
+}

@@ -1,6 +1,8 @@
 ---
 import Nav from "./Nav.astro";
 import LinkList from "./LinkList.astro";
+
+import { t } from "i18next";
 ---
 
 <header id="start">
@@ -15,12 +17,19 @@ import LinkList from "./LinkList.astro";
       alt="Logo Zeroproject"
     />
 
-    <h1 class="central-index__title">Zero project</h1>
+    <h1 class="central-index__title">zeroproject</h1>
     <p class="central-index__paragraph">
-      Portfolio de proyectos personales y de la comunidad.
+      <span class="shake-hand">👋 &nbsp;</span>
+      {t("main.welcome")}
     </p>
 
     <LinkList size={"small"} />
+    <img
+      class="arrow-down"
+      width="50px"
+      alt="arrow"
+      src="assets/images/arrow-down.svg"
+    />
   </div>
 </header>
 
@@ -30,6 +39,32 @@ import LinkList from "./LinkList.astro";
     min-height: 100vh;
     position: relative;
     overflow: hidden;
+  }
+
+  .shake-hand {
+    display: inline-block;
+    transform-origin: 1.5rem 1.5rem;
+    animation: shake 1.5s infinite;
+  }
+
+  @keyframes shake {
+    0% {
+      transform: rotate(0);
+    }
+    50% {
+      transform: rotate(50deg);
+    }
+    100% {
+      transform: rotate(0);
+    }
+  }
+
+  .arrow-down {
+    position: absolute;
+    bottom: 10rem;
+    left: calc(50% - 25px);
+    transform: translateY(0px);
+    animation: levitate 2s infinite;
   }
 
   .central-index {
@@ -54,7 +89,7 @@ import LinkList from "./LinkList.astro";
 
   .central-index__paragraph {
     font-size: 1.125rem;
-    margin-top: 3rem;
+    margin: 3rem 0;
     font-weight: lighter;
   }
 
@@ -74,9 +109,21 @@ import LinkList from "./LinkList.astro";
   }
 
   .central-index__paragraph {
-    font-size: 1.125rem;
-    margin-top: 3rem;
+    font-size: 1.6rem;
+    margin-top: 2rem;
     font-weight: lighter;
+  }
+
+  @keyframes levitate {
+    0% {
+      bottom: 10rem;
+    }
+    50% {
+      bottom: 11rem;
+    }
+    100% {
+      bottom: 10rem;
+    }
   }
 
   @keyframes rotate {
