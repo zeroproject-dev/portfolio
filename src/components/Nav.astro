@@ -8,37 +8,37 @@ const t = getI18N({ currentLocale });
 ---
 
 <nav
-  class="fixed top-0 left-0 right-0 h-16 flex justify-between items-center px-16 z-10"
+  class="fixed lg:top-0 bottom-0 left-0 right-0 lg:h-16 h-11 flex lg:justify-between justify-center items-center px-16 z-10"
 >
-  <div class="flex items-center">
+  <div class="hidden lg:flex items-center w-full">
     <LogoIcon class="w-12" />
   </div>
 
   <ul class="flex p-0 m-0 h-full list-none content-center">
     <li
-      class="w-28 h-full hover:bg-hover hover:border-b-2 hover:border-b-solid hover:font-bold hover:border-accentColor"
+      class="md:w-28 w-20 h-full hover:bg-hover hover:border-b-2 hover:border-b-solid hover:font-bold hover:border-accentColor"
       id="nav-start"
     >
       <a
-        class="grid w-28 h-full place-content-center no-underline text-white"
+        class="grid w-full h-full place-content-center no-underline text-white"
         href="#start">{t.navbar.home}</a
       >
     </li>
     <li
-      class="w-28 h-full hover:bg-hover hover:border-b-2 hover:border-b-solid hover:font-bold hover:border-accentColor"
+      class="md:w-28 w-20 h-full hover:bg-hover hover:border-b-2 hover:border-b-solid hover:font-bold hover:border-accentColor"
       id="nav-projects"
     >
       <a
-        class="grid w-28 h-full place-content-center no-underline text-white"
+        class="grid w-full h-full place-content-center no-underline text-white"
         href="#projects">{t.navbar.projects}</a
       >
     </li>
     <li
-      class="w-28 h-full hover:bg-hover hover:border-b-2 hover:border-b-solid hover:font-bold hover:border-accentColor"
+      class="md:w-28 w-20 h-full hover:bg-hover hover:border-b-2 hover:border-b-solid hover:font-bold hover:border-accentColor"
       id="nav-contact"
     >
       <a
-        class="grid w-28 h-full place-content-center no-underline text-white"
+        class="grid w-full h-full place-content-center no-underline text-white"
         href="#contact">{t.navbar.contact}</a
       >
     </li>

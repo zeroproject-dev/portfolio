@@ -12,9 +12,7 @@ const otherLocales = LANGS.filter((locale) => locale.locale !== lang);
 ---
 
 <div class="relative grid place-items-center w-full h-full">
-  <div
-    class="group text-white rounded-md text-xs bg-transparent transition-all"
-  >
+  <div class="group text-white text-xs bg-transparent">
     <button
       type="button"
       class="inline-flex justify-start items-center w-full gap-x-2 py-2"
@@ -24,7 +22,9 @@ const otherLocales = LANGS.filter((locale) => locale.locale !== lang);
       {currentLocaleData.label}
       <ChevronDownIcon />
     </button>
-    <ul class="group-hover:block hidden pt-0.5 absolute w-full">
+    <ul
+      class="group-hover:block hidden pt-0.5 absolute w-full max-lg:bottom-[100%]"
+    >
       {
         otherLocales.map((locale) => (
           <li class="py-[2px] cursor-pointer">

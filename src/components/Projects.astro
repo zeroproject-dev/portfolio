@@ -44,6 +44,12 @@ const projects = [
     repo: "tpHub",
     image: "https://picsum.photos/200/300",
   },
+  {
+    title: "LSER",
+    description: "Indexador y buscador de archivos locales elaborado con Rust.",
+    repo: "lser",
+    image: "https://picsum.photos/200/300",
+  },
 ];
 
 import { getI18N } from "@i18n/index";
@@ -53,7 +59,7 @@ const t = getI18N({ currentLocale });
 
 <section
   id="projects"
-  class="max-w-[90%] m-auto w-full h-dvh flex flex-col pt-24 overflow-hidden"
+  class="max-w-[90%] m-auto w-full h-svh flex flex-col pt-24 overflow-hidden"
   data-observe="projects"
 >
   <h2 class="text-center text-5xl font-bold">{t.projects.title}</h2>

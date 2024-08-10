@@ -12,7 +12,7 @@ const t = getI18N({ currentLocale });
 <header
   id="start"
   data-observe="start"
-  class="w-full h-dvh relative overflow-hidden pt-32 px-16"
+  class="w-full lg:min-h-vh relative overflow-hidden pt-6 lg:pt-32 px-16"
 >
   <Nav />
 
@@ -21,8 +21,10 @@ const t = getI18N({ currentLocale });
   <div class="flex flex-col justify-center items-center">
     <LogoIcon class="mt-16 z-10" />
 
-    <h1 class="text-4xl mt-16 font-bold">Andres Copeticona</h1>
-    <h2 class="text-2xl">zeroproject</h2>
+    <h1 class="md:text-4xl text-2xl mt-16 font-bold text-center">
+      Andres Copeticona
+    </h1>
+    <h2 class="md:text-2xl text-xl">zeroproject</h2>
     <p class="font-light my-8 text-xl">
       <span class="shake-hand">👋 &nbsp;</span>
       <span>{t.main.welcome}</span>
@@ -32,7 +34,7 @@ const t = getI18N({ currentLocale });
   </div>
 
   <ArrowDownIcon
-    class="absolute bottom-10 left-[calc(50%-25px)] animate-bounce"
+    class="absolute bottom-0 left-2 lg:bottom-10 lg:left-[calc(50%-25px)] animate-bounce"
     width="50px"
     height="50px"
   />
