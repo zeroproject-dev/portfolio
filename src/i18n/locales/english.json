@@ -4,7 +4,53 @@
     "welcome": "Welcome to my portfolio"
   },
   "projects": {
-    "title": "Projects"
+    "title": "Projects",
+    "projects": [
+      {
+        "title": "Stream subtitles",
+        "description": "Real time subtitles on a mini local web server with artificial intelligence in Python.",
+        "repo": "stream-subtitles",
+        "image": "https://picsum.photos/200/300"
+      },
+      {
+        "title": "Board",
+        "description": "Infinite board written in Typescript",
+        "preview": "https://board.zeroproject.dev",
+        "repo": "canvasboard-ts",
+        "image": "/assets/images/board.webp"
+      },
+      {
+        "title": "Dotz",
+        "description": "Dot files manager written in Rust.",
+        "repo": "dotz",
+        "preview": "https://crates.io/crates/dotz",
+        "image": "/assets/images/dotz.webp"
+      },
+      {
+        "title": "Zomodoro",
+        "description": "Pomodoro made in c++ with Qt5 library.",
+        "repo": "zomodoro",
+        "image": "/assets/images/pomodoro.webp"
+      },
+      {
+        "title": "NucitaBot",
+        "description": "Discord Bot for text to speech with azure services and google.",
+        "repo": "nucitabot",
+        "image": "https://picsum.photos/200/300"
+      },
+      {
+        "title": "TpHub",
+        "description": "TpHub is a plugin for minecraft servers that allows save coordinates and teleport to them.",
+        "repo": "tpHub",
+        "image": "https://picsum.photos/200/300"
+      },
+      {
+        "title": "LSER",
+        "description": "Indexer and search engine for local files with a simple web interface.",
+        "repo": "lser",
+        "image": "https://picsum.photos/200/300"
+      }
+    ]
   },
   "contact": {
     "title": "Contact"

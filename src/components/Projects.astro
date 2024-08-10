@@ -1,60 +1,11 @@
 ---
 import CardProject from "@components/Card.astro";
 
-const projects = [
-  {
-    title: "Stream subtitles",
-    description:
-      "Genera subtitulos en tiempo real en un mini servidor web local con inteligencia artificial en python.",
-    repo: "stream-subtitles",
-    image: "https://picsum.photos/200/300",
-  },
-  {
-    title: "Board",
-    description: "Pizarra virtual hecha en typescript.",
-    preview: "https://board.zeroproject.dev",
-    repo: "canvasboard-ts",
-    image: "/assets/images/board.webp",
-  },
-  {
-    title: "Dotz",
-    description:
-      "Dotz ayuda al manejo de archivos de configuración en linux hecho en rust.",
-    repo: "dotz",
-    preview: "https://crates.io/crates/dotz",
-    image: "/assets/images/dotz.webp",
-  },
-  {
-    title: "Pomodoro",
-    description: "Pomodoro hecho en c++ con interfaz gráfica de Qt6.",
-    repo: "zomodoro",
-    image: "/assets/images/pomodoro.webp",
-  },
-  {
-    title: "NucitaBot",
-    description:
-      "Bot de discord que permite mediante tts generar audio y reproducirlo en un canal.",
-    repo: "nucitabot",
-    image: "https://picsum.photos/200/300",
-  },
-  {
-    title: "TpHub",
-    description:
-      "TpHub es un plugin para servidores de minecraft spigot que permite almacenar coordenadas y poder teletransportarse a ellas facilmente.",
-    repo: "tpHub",
-    image: "https://picsum.photos/200/300",
-  },
-  {
-    title: "LSER",
-    description: "Indexador y buscador de archivos locales elaborado con Rust.",
-    repo: "lser",
-    image: "https://picsum.photos/200/300",
-  },
-];
-
 import { getI18N } from "@i18n/index";
 const { currentLocale } = Astro;
 const t = getI18N({ currentLocale });
+
+const projects = t.projects.projects;
 ---
 
 <section

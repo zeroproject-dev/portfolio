@@ -4,7 +4,53 @@
     "welcome": "Bienvenido a mi portafolio"
   },
   "projects": {
-    "title": "Proyectos"
+    "title": "Proyectos",
+    "projects": [
+      {
+        "title": "Stream subtitles",
+        "description": "Genera subtitulos en tiempo real en un mini servidor web local con inteligencia artificial en Python.",
+        "repo": "stream-subtitles",
+        "image": "https://picsum.photos/200/300"
+      },
+      {
+        "title": "Board",
+        "description": "Pizarra virtual infinita hecha en Typescript.",
+        "preview": "https://board.zeroproject.dev",
+        "repo": "canvasboard-ts",
+        "image": "/assets/images/board.webp"
+      },
+      {
+        "title": "Dotz",
+        "description": "Dotz ayuda al manejo de archivos de configuración en linux hecho en rust.",
+        "repo": "dotz",
+        "preview": "https://crates.io/crates/dotz",
+        "image": "/assets/images/dotz.webp"
+      },
+      {
+        "title": "Zomodoro",
+        "description": "Pomodoro hecho en c++ con interfaz gráfica de Qt5.",
+        "repo": "zomodoro",
+        "image": "/assets/images/pomodoro.webp"
+      },
+      {
+        "title": "NucitaBot",
+        "description": "Bot de discord que permite mediante tts generar audio y reproducirlo en un canal.",
+        "repo": "nucitabot",
+        "image": "https://picsum.photos/200/300"
+      },
+      {
+        "title": "TpHub",
+        "description": "TpHub es un plugin para servidores de minecraft spigot que permite almacenar coordenadas y poder teletransportarse a ellas facilmente.",
+        "repo": "tpHub",
+        "image": "https://picsum.photos/200/300"
+      },
+      {
+        "title": "LSER",
+        "description": "Indexador y buscador de archivos locales elaborado con Rust.",
+        "repo": "lser",
+        "image": "https://picsum.photos/200/300"
+      }
+    ]
   },
   "contact": {
     "title": "Contacto"
