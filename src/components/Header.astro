@@ -2,7 +2,8 @@
 import Nav from "./Nav.astro";
 import LinkList from "./LinkList.astro";
 
-import { t } from "i18next";
+import { useTranslations, getLangFromUrl } from "@i18n/utils";
+const t = useTranslations(getLangFromUrl(Astro.url));
 ---
 
 <header id="start">
