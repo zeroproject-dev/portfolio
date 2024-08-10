@@ -1,5 +1,7 @@
 ---
-import { useTranslations, getLangFromUrl } from "../i18n/utils";
+import LanguagePicker from "./LanguagePicker.astro";
+
+import { useTranslations, getLangFromUrl } from "@i18n/utils";
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 ---
@@ -8,7 +10,7 @@ const t = useTranslations(lang);
   <div class="logo">
     <img
       class="logo__image"
-      src="assets/images/Logo.svg"
+      src="/assets/images/Logo.svg"
       alt="Logo Zeroproject"
     />
   </div>
@@ -21,6 +23,9 @@ const t = useTranslations(lang);
     </li>
     <li class="nav__item">
       <a class="nav__link" href="#contact">{t("navbar.contact")}</a>
+    </li>
+    <li style="width: 100px;">
+      <LanguagePicker />
     </li>
   </ul>
 </nav>

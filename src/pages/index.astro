@@ -1,29 +1,13 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import Header from "../components/Header.astro";
-import Projects from "../components/Projects.astro";
-import Contact from "../components/Contact.astro";
+import IndexApp from "@components/pages/index.astro";
 ---
 
 <Layout>
-  <Header />
-  <main>
-    <Projects />
-    <Contact />
-  </main>
+  <IndexApp />
 </Layout>
 
 <style>
-  html {
-    box-sizing: border-box;
-  }
-
-  *,
-  *:before,
-  *:after {
-    box-sizing: inherit;
-  }
-
   main {
     max-width: 1280px;
     padding: 0 2rem;

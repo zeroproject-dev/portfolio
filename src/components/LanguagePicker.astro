@@ -1,0 +1,55 @@
+---
+import { languages } from "@i18n/ui";
+
+import { useTranslatePath, getLangFromUrl } from "@i18n/utils";
+
+const lang = getLangFromUrl(Astro.url);
+const translatePath = useTranslatePath(lang);
+---
+
+<div class="language-picker">
+  <select>
+    {
+      Object.entries(languages).map(([l, label]) => {
+        return (
+          <option value={translatePath("/", l)} selected={l === lang}>
+            {label}
+          </option>
+        );
+      })
+    }
+  </select>
+</div>
+
+<script>
+  const select = document.getElementsByTagName("select")[0];
+
+  select.addEventListener("change", onOptionClick);
+
+  function onOptionClick(e: MouseEvent) {
+    const target = e.target as HTMLSelectElement;
+    const lang = target.value;
+
+    window.location.href = lang;
+  }
+</script>
+
+<style>
+  select {
+    border: 1px solid #ccc;
+    border-width: 0px;
+    background-color: transparent;
+    color: white;
+    cursor: pointer;
+    height: 2rem;
+    padding: 0.5rem;
+  }
+
+  .language-picker {
+    width: 100%;
+    height: 100%;
+
+    display: grid;
+    place-items: center;
+  }
+</style>
