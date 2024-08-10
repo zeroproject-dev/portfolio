@@ -9,7 +9,11 @@ const { currentLocale } = Astro;
 const t = getI18N({ currentLocale });
 ---
 
-<header class="w-dvw h-dvh relative overflow-hidden pt-32 px-16">
+<header
+  id="start"
+  data-observe="start"
+  class="w-full h-dvh relative overflow-hidden pt-32 px-16"
+>
   <Nav />
 
   <div class="gradient"></div>
@@ -33,12 +37,6 @@ const t = getI18N({ currentLocale });
     height="50px"
   />
 </header>
-
-<script>
-  document.addEventListener("DOMContentLoaded", function () {
-    window.scrollTo(0, 0);
-  });
-</script>
 
 <style>
   .shake-hand {

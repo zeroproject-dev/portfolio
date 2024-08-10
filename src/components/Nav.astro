@@ -7,19 +7,40 @@ const { currentLocale } = Astro;
 const t = getI18N({ currentLocale });
 ---
 
-<nav>
-  <div class="logo">
-    <LogoIcon class="logo__image" />
+<nav
+  class="fixed top-0 left-0 right-0 h-16 flex justify-between items-center px-16 z-10"
+>
+  <div class="flex items-center">
+    <LogoIcon class="w-12" />
   </div>
-  <ul class="nav">
-    <li class="nav__item">
-      <a class="nav__link" href="#start">{t.navbar.home}</a>
+
+  <ul class="flex p-0 m-0 h-full list-none content-center">
+    <li
+      class="w-28 h-full hover:bg-hover hover:border-b-2 hover:border-b-solid hover:font-bold hover:border-accentColor"
+      id="nav-start"
+    >
+      <a
+        class="grid w-28 h-full place-content-center no-underline text-white"
+        href="#start">{t.navbar.home}</a
+      >
     </li>
-    <li class="nav__item">
-      <a class="nav__link" href="#projects">{t.navbar.projects}</a>
+    <li
+      class="w-28 h-full hover:bg-hover hover:border-b-2 hover:border-b-solid hover:font-bold hover:border-accentColor"
+      id="nav-projects"
+    >
+      <a
+        class="grid w-28 h-full place-content-center no-underline text-white"
+        href="#projects">{t.navbar.projects}</a
+      >
     </li>
-    <li class="nav__item">
-      <a class="nav__link" href="#contact">{t.navbar.contact}</a>
+    <li
+      class="w-28 h-full hover:bg-hover hover:border-b-2 hover:border-b-solid hover:font-bold hover:border-accentColor"
+      id="nav-contact"
+    >
+      <a
+        class="grid w-28 h-full place-content-center no-underline text-white"
+        href="#contact">{t.navbar.contact}</a
+      >
     </li>
     <li style="width: 100px;">
       <LanguagePicker />
@@ -28,59 +49,6 @@ const t = getI18N({ currentLocale });
 </nav>
 
 <style>
-  nav {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 5rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 4rem;
-  }
-
-  .logo {
-    display: flex;
-    align-items: center;
-  }
-
-  .logo__image {
-    width: 3rem;
-    height: 3.5rem;
-    margin-right: 1rem;
-  }
-
-  .nav {
-    display: flex;
-    padding: 0;
-    margin: 0;
-    height: inherit;
-    list-style-type: none;
-    align-content: center;
-    font-size: 1rem;
-  }
-
-  .nav__item {
-    width: 100px;
-    height: inherit;
-  }
-
-  .nav__link {
-    display: grid;
-    width: inherit;
-    height: inherit;
-    place-content: center;
-    color: var(--white);
-    text-decoration: none;
-  }
-
-  .nav__item:hover {
-    background-color: var(--hover-color);
-    border-bottom: 2px solid var(--accent-color);
-    font-weight: bold;
-  }
-
   @media (max-width: 768px) {
     nav {
       justify-content: center;

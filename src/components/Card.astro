@@ -1,89 +1,97 @@
 ---
 export interface Props {
-  title: string;
-  description: string;
-  link: string;
-  image: string;
+  project: any;
 }
-const { link, title, description, image } = Astro.props;
+
+import GithubIcon from "@components/icons/Github.astro";
+import EyeIcon from "@components/icons/Eye.astro";
+
+const baseGitUrl = "https://github.com/zeroproject-dev";
+
+const { project } = Astro.props;
 ---
 
-<a href={link} class="card__link" target="_blank" rel="noopener noreferrer">
-  <div class="card">
-    <div class="card__border">
-      <h2 class="card__title">
-        {title}
-        <span>&rarr;</span>
-      </h2>
-      <img class="card__image" src={image} alt={title} />
-      <p class="card__description">
-        {description}
-      </p>
+<div
+  class="inline-block w-[165px] h-[130px] absolute rounded-lg bg-center bg-cover transition-all item bottom-16 hover:scale-105 cursor-pointer"
+  style={`background-image: url(${project.image});`}
+>
+  <div class="max-w-[300px] h-full text-left opacity-0 pl-2 content">
+    <span class="text-2xl font-bold">{project.title}</span>
+    <div class="desc">{project.description}</div>
+    <div class="flex gap-x-2 items-center">
+      <a
+        href={`${baseGitUrl}/${project.repo}`}
+        target="_blank"
+        rel="noreferrer noopener"
+        aria-label={`Github ${project.title}`}
+      >
+        <GithubIcon />
+      </a>
+      {
+        project.preview && (
+          <a
+            target="_blank"
+            aria-label={`Preview ${project.title}`}
+            rel="noreferrer noopener"
+            href={project.preview}
+          >
+            <EyeIcon />
+          </a>
+        )
+      }
     </div>
   </div>
-</a>
+</div>
 
 <style>
-  .card {
-    width: 300px;
-    height: 300px;
-    background-image: linear-gradient(0deg, #870fff 0%, #0fffe3 100%);
-    border-radius: 20px;
-    transition: all 0.3s;
-    text-align: center;
+  .item {
+    transition: all 0.5s;
+    bottom: 4rem;
   }
 
-  .card__border {
-    width: 300px;
-    height: 300px;
-    background-color: var(--black);
-    border-radius:;
-    border-radius: 18px;
-    padding: 1rem;
-    box-sizing: border-box;
-    transition: transform 0.2s;
+  .item:nth-child(1),
+  .item:nth-child(2) {
+    cursor: inherit;
+    transform: translate(0, 0) !important;
+    width: 100% !important;
+    left: 0;
+    right: 0;
+    bottom: 3rem;
+    height: calc(100% - 6rem) !important;
+    background-size: cover;
   }
 
-  .card:hover .card__border {
-    transform: scale(0.98);
-    border-radius: 20px;
-    padding: 0;
-    padding-top: 1rem;
+  .item:nth-child(3) {
+    left: calc(50% - 82px);
   }
 
-  .card:hover {
-    box-shadow: 0px 0px 30px 1px rgba(0, 255, 117, 0.3);
+  .item:nth-child(4) {
+    left: calc(50% + 90px);
   }
 
-  .card__title {
-    font-size: 1.5rem;
-    font-weight: bold;
-    text-align: center;
-    margin-top: 0;
-    margin-bottom: 1rem;
+  .item:nth-child(5) {
+    left: calc(50% + 262px);
   }
 
-  .card__image {
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-  }
-
-  .card__link {
-    text-decoration: none;
-    color: var(--white);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .card:hover .card__description {
+  .item:nth-child(n + 6) {
+    left: calc(50% + 650px);
     display: none;
   }
 
-  .card:hover .card__image {
-    width: 150px;
-    height: 150px;
-    border-radius: 0;
+  .item:nth-child(2) .content {
+    opacity: 1;
+    display: flex;
+    gap: 1rem;
+    flex-direction: column;
+    justify-content: center;
+    background: linear-gradient(
+      90deg,
+      rgba(0, 0, 0, 0.6) 0%,
+      rgba(0, 0, 0, 0.3) 50%,
+      rgba(0, 0, 0, 0.1) 90%,
+      rgba(0, 0, 0, 0) 100%
+    );
+
+    transition: all 0.5s;
   }
 </style>

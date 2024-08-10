@@ -5,15 +5,35 @@ import Contact from "@components/Contact.astro";
 ---
 
 <Header />
-<main>
-  <!-- <Projects /> -->
+<main class="max-w-7xl mx-auto">
+  <Projects />
   <Contact />
 </main>
 
-<style>
-  main {
-    max-width: 1280px;
-    padding: 0 2rem;
-    margin: auto;
-  }
-</style>
+<script>
+  const navClassList = [
+    "bg-hover",
+    "border-b-2",
+    "border-solid",
+    "border-accentColor",
+    "font-bold",
+  ];
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        const navItemId = entry.target.getAttribute("data-observe");
+        const navItem = document.getElementById(`nav-${navItemId}`);
+        navClassList.forEach((className) => {
+          navItem.classList.toggle(className, entry.isIntersecting);
+        });
+      });
+    },
+    { threshold: 0.5 },
+  );
+
+  const observables = document.querySelectorAll("[data-observe]");
+  observables.forEach((observable) => {
+    observer.observe(observable);
+  });
+</script>

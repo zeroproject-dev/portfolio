@@ -6,7 +6,7 @@ const { currentLocale } = Astro;
 const t = getI18N({ currentLocale });
 ---
 
-<section id="contact">
+<section id="contact" data-observe="contact">
   <h2 class="contact__title">{t.contact.title}</h2>
 
   <LinkList size={"large"} />
