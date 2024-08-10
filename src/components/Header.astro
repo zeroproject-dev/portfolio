@@ -2,8 +2,9 @@
 import Nav from "./Nav.astro";
 import LinkList from "./LinkList.astro";
 
-import { useTranslations, getLangFromUrl } from "@i18n/utils";
-const t = useTranslations(getLangFromUrl(Astro.url));
+import { getI18N } from "@i18n/index";
+const { currentLocale } = Astro;
+const t = getI18N({ currentLocale });
 ---
 
 <header id="start">
@@ -21,7 +22,7 @@ const t = useTranslations(getLangFromUrl(Astro.url));
     <h1 class="central-index__title">zeroproject</h1>
     <p class="central-index__paragraph">
       <span class="shake-hand">👋 &nbsp;</span>
-      {t("main.welcome")}
+      {t.main.welcome}
     </p>
 
     <LinkList size={"small"} />

@@ -1,0 +1,17 @@
+{
+  "title": "Portfolio - zeroproject",
+  "main": {
+    "welcome": "Welcome to my portfolio"
+  },
+  "projects": {
+    "title": "Projects"
+  },
+  "contact": {
+    "title": "Contact"
+  },
+  "navbar": {
+    "home": "Home",
+    "projects": "Projects",
+    "contact": "Contact"
+  }
+}

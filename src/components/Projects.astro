@@ -44,12 +44,13 @@ const projects = [
   },
 ];
 
-import { useTranslations, getLangFromUrl } from "../i18n/utils";
-const t = useTranslations(getLangFromUrl(Astro.url));
+import { getI18N } from "../i18n/index";
+const { currentLocale } = Astro;
+const t = getI18N({ currentLocale });
 ---
 
 <section id="projects">
-  <h2 class="projects__title">{t("projects.title")}</h2>
+  <h2 class="projects__title">{t.projects.title}</h2>
   <div class="projects">
     {projects.map((project) => <Card {...project} />)}
   </div>

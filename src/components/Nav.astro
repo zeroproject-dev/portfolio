@@ -1,9 +1,9 @@
 ---
 import LanguagePicker from "./LanguagePicker.astro";
 
-import { useTranslations, getLangFromUrl } from "@i18n/utils";
-const lang = getLangFromUrl(Astro.url);
-const t = useTranslations(lang);
+import { getI18N } from "@i18n/index";
+const { currentLocale } = Astro;
+const t = getI18N({ currentLocale });
 ---
 
 <nav>
@@ -16,13 +16,13 @@ const t = useTranslations(lang);
   </div>
   <ul class="nav">
     <li class="nav__item">
-      <a class="nav__link" href="#start">{t("navbar.home")}</a>
+      <a class="nav__link" href="#start">{t.navbar.home}</a>
     </li>
     <li class="nav__item">
-      <a class="nav__link" href="#projects">{t("navbar.projects")}</a>
+      <a class="nav__link" href="#projects">{t.navbar.projects}</a>
     </li>
     <li class="nav__item">
-      <a class="nav__link" href="#contact">{t("navbar.contact")}</a>
+      <a class="nav__link" href="#contact">{t.navbar.contact}</a>
     </li>
     <li style="width: 100px;">
       <LanguagePicker />

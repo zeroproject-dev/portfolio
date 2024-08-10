@@ -12,6 +12,8 @@
     // Add type definitions for our Astro runtime.
     "types": ["astro/client"],
 
+    "allowSyntheticDefaultImports": true,
+
     "baseUrl": ".",
     "paths": {
       "@components/*": ["./src/components/*"],
