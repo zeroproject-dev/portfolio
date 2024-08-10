@@ -1,5 +1,7 @@
 import { defineConfig } from "astro/config";
 
+import tailwind from "@astrojs/tailwind";
+
 // https://astro.build/config
 export default defineConfig({
   site: "https://zeroproject.dev",
@@ -7,10 +9,11 @@ export default defineConfig({
     defaultLocale: "en",
     locales: ["en", "es"],
     routing: {
-      prefixDefaultLocale: false,
+      prefixDefaultLocale: false
     },
     fallback: {
-      es: "en",
-    },
+      es: "en"
+    }
   },
+  integrations: [tailwind()]
 });

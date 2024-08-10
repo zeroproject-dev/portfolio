@@ -1,48 +1,46 @@
 ---
 import Nav from "./Nav.astro";
 import LinkList from "./LinkList.astro";
+import LogoIcon from "@components/icons/Logo.astro";
+import ArrowDownIcon from "@components/icons/ArrowDown.astro";
 
 import { getI18N } from "@i18n/index";
 const { currentLocale } = Astro;
 const t = getI18N({ currentLocale });
 ---
 
-<header id="start">
+<header class="w-dvw h-dvh relative overflow-hidden pt-32 px-16">
   <Nav />
 
   <div class="gradient"></div>
 
-  <div class="central-index">
-    <img
-      class="central-index__logo"
-      src="/assets/images/Logo.svg"
-      alt="Logo Zeroproject"
-    />
+  <div class="flex flex-col justify-center items-center">
+    <LogoIcon class="mt-16 z-10" />
 
-    <h1 class="central-index__title">zeroproject</h1>
-    <p class="central-index__paragraph">
+    <h1 class="text-4xl mt-16 font-bold">Andres Copeticona</h1>
+    <h2 class="text-2xl">zeroproject</h2>
+    <p class="font-light my-8 text-xl">
       <span class="shake-hand">👋 &nbsp;</span>
-      {t.main.welcome}
+      <span>{t.main.welcome}</span>
     </p>
 
     <LinkList size={"small"} />
-    <img
-      class="arrow-down"
-      width="50px"
-      alt="arrow"
-      src="/assets/images/arrow-down.svg"
-    />
   </div>
+
+  <ArrowDownIcon
+    class="absolute bottom-10 left-[calc(50%-25px)] animate-bounce"
+    width="50px"
+    height="50px"
+  />
 </header>
 
-<style>
-  header {
-    padding: 8rem 4rem 0 4rem;
-    min-height: 100vh;
-    position: relative;
-    overflow: hidden;
-  }
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    window.scrollTo(0, 0);
+  });
+</script>
 
+<style>
   .shake-hand {
     display: inline-block;
     transform-origin: 1.5rem 1.5rem;
@@ -58,73 +56,6 @@ const t = getI18N({ currentLocale });
     }
     100% {
       transform: rotate(0);
-    }
-  }
-
-  .arrow-down {
-    position: absolute;
-    bottom: 10rem;
-    left: calc(50% - 25px);
-    transform: translateY(0px);
-    animation: levitate 2s infinite;
-  }
-
-  .central-index {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: 100%;
-  }
-
-  .central-index__logo {
-    width: 300px;
-    height: 350px;
-  }
-
-  .central-index__title {
-    font-size: 3rem;
-    font-weight: bold;
-    margin-top: 6rem;
-  }
-
-  .central-index__paragraph {
-    font-size: 1.125rem;
-    margin: 3rem 0;
-    font-weight: lighter;
-  }
-
-  .central-index {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: 100%;
-  }
-
-  .central-index__title {
-    font-size: 3rem;
-    font-weight: bold;
-    margin-top: 6rem;
-  }
-
-  .central-index__paragraph {
-    font-size: 1.6rem;
-    margin-top: 2rem;
-    font-weight: lighter;
-  }
-
-  @keyframes levitate {
-    0% {
-      bottom: 10rem;
-    }
-    50% {
-      bottom: 11rem;
-    }
-    100% {
-      bottom: 10rem;
     }
   }
 
@@ -158,15 +89,12 @@ const t = getI18N({ currentLocale });
     right: 0;
     top: -28%;
     bottom: 0;
+    z-index: 0;
   }
 
   @media (min-width: 720px) {
     .gradient {
       --size: 400px;
     }
-  }
-
-  * {
-    z-index: 1;
   }
 </style>

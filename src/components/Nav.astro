@@ -1,5 +1,6 @@
 ---
 import LanguagePicker from "./LanguagePicker.astro";
+import LogoIcon from "@components/icons/Logo.astro";
 
 import { getI18N } from "@i18n/index";
 const { currentLocale } = Astro;
@@ -8,11 +9,7 @@ const t = getI18N({ currentLocale });
 
 <nav>
   <div class="logo">
-    <img
-      class="logo__image"
-      src="/assets/images/Logo.svg"
-      alt="Logo Zeroproject"
-    />
+    <LogoIcon class="logo__image" />
   </div>
   <ul class="nav">
     <li class="nav__item">

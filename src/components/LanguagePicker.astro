@@ -1,59 +1,42 @@
 ---
-import { LANGS } from "@i18n/index";
+import ChevronDownIcon from "@components/icons/ChevronDown.astro";
 
+import { LANGS } from "@i18n/index";
 import { useTranslatePath, getLangFromUrl } from "@i18n/utils";
 
 const lang = getLangFromUrl(Astro.url);
 const translatePath = useTranslatePath(lang);
-console.log(lang);
+
+const currentLocaleData = LANGS.find((locale) => locale.locale === lang);
+const otherLocales = LANGS.filter((locale) => locale.locale !== lang);
 ---
 
-<div class="language-picker">
-  <select>
-    {
-      Object.entries(LANGS).map(([_, l]) => {
-        return (
-          <option
-            value={translatePath("/", l.locale)}
-            selected={l.locale === lang}
-          >
-            {l.label}
-          </option>
-        );
-      })
-    }
-  </select>
+<div class="relative grid place-items-center w-full h-full">
+  <div
+    class="group text-white rounded-md text-xs bg-transparent transition-all"
+  >
+    <button
+      type="button"
+      class="inline-flex justify-start items-center w-full gap-x-2 py-2"
+      aria-expanded="true"
+      aria-haspopup="true"
+    >
+      {currentLocaleData.label}
+      <ChevronDownIcon />
+    </button>
+    <ul class="group-hover:block hidden pt-0.5 absolute w-full">
+      {
+        otherLocales.map((locale) => (
+          <li class="py-[2px] cursor-pointer">
+            <a
+              class="rounded-md whitespace-no-wrap inline-flex justify-start items-center w-full gap-x-2 px-3 py-2"
+              href={translatePath(`/`, locale.locale)}
+            >
+              {locale.label}
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+  </div>
 </div>
-
-<script>
-  const select = document.getElementsByTagName("select")[0];
-
-  select.addEventListener("change", onOptionClick);
-
-  function onOptionClick(e: MouseEvent) {
-    const target = e.target as HTMLSelectElement;
-    const lang = target.value;
-
-    window.location.href = lang;
-  }
-</script>
-
-<style>
-  select {
-    border: 1px solid #ccc;
-    border-width: 0px;
-    background-color: transparent;
-    color: white;
-    cursor: pointer;
-    height: 2rem;
-    padding: 0.5rem;
-  }
-
-  .language-picker {
-    width: 100%;
-    height: 100%;
-
-    display: grid;
-    place-items: center;
-  }
-</style>

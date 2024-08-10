@@ -1,4 +1,7 @@
 ---
+import GithubIcon from "@components/icons/Github.astro";
+import LinkedinIcon from "@components/icons/Linkedin.astro";
+
 export interface Props {
   size: "small" | "large";
 }
@@ -10,27 +13,21 @@ const { size } = Astro.props;
   <a
     target="_blank"
     rel="noreferrer noopener"
+    aria-label="Github"
     href="https://github.com/zeroproject-dev"
     class="links__link"
   >
-    <img
-      class={`links-${size}__image`}
-      src="/assets/icons/Github icon.svg"
-      alt="Github"
-    />
+    <GithubIcon class={`links-${size}__image`} />
   </a>
 
   <a
     target="_blank"
+    aria-label="Linkedin"
     rel="noreferrer noopener"
     href="https://www.linkedin.com/in/andres-copeticona-a690ba1b8/"
     class="links__link"
   >
-    <img
-      class={`links-${size}__image`}
-      src="/assets/icons/Linkedin icon.svg"
-      alt="Linkedin"
-    />
+    <LinkedinIcon class={`links-${size}__image`} />
   </a>
 </div>
 
