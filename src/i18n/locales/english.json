@@ -1,5 +1,8 @@
 {
-  "title": "Portfolio - zeroproject",
+  "meta": {
+    "title": "Portfolio - zeroproject",
+    "description": "Portfolio of zeroproject"
+  },
   "main": {
     "welcome": "Welcome to my portfolio"
   },
