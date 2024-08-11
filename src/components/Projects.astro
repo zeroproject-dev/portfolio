@@ -44,14 +44,17 @@ const projects = t.projects.projects;
     $container.appendChild($items[0]);
   };
 
-  let interval = setInterval(autoPlay, 2000);
+  const INTERVAL = 3000;
+
+  let interval = setInterval(autoPlay, INTERVAL);
 
   $play.addEventListener("click", () => {
     if ($play.textContent === "=") {
       clearInterval(interval);
       $play.textContent = "|>";
     } else {
-      interval = setInterval(autoPlay, 2000);
+      autoPlay();
+      interval = setInterval(autoPlay, INTERVAL);
       $play.textContent = "=";
     }
   });

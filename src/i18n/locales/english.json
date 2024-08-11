@@ -39,13 +39,13 @@
         "title": "NucitaBot",
         "description": "Discord Bot for text to speech with azure services and google.",
         "repo": "nucitabot",
-        "image": "https://picsum.photos/200/300"
+        "image": "/assets/images/nucitabot.webp"
       },
       {
         "title": "TpHub",
         "description": "TpHub is a plugin for minecraft servers that allows save coordinates and teleport to them.",
         "repo": "tpHub",
-        "image": "https://picsum.photos/200/300"
+        "image": "/assets/images/tphub.webp"
       },
       {
         "title": "LSER",
