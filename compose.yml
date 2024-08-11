@@ -1,0 +1,16 @@
+services:
+  app:
+    container_name: portfolio
+    image: portfolio
+    build:
+      context: .
+      dockerfile: deploy/Dockerfile
+    restart: unless-stopped
+    expose:
+      - 80
+    networks:
+      - nginx_proxy_default
+
+networks:
+  nginx_proxy_default:
+    external: true
