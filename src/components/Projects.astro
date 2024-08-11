@@ -25,6 +25,7 @@ const projects = t.projects.projects;
       <button class="prev">
         {"<"}
       </button>
+      <button class="play">=</button>
       <button class="next">
         {">"}
       </button>
@@ -35,14 +36,42 @@ const projects = t.projects.projects;
 <script>
   const $next = document.querySelector(".next");
   const $prev = document.querySelector(".prev");
+  const $play = document.querySelector(".play");
   const $container = document.getElementById("container");
 
+  const autoPlay = () => {
+    const $items = document.querySelectorAll(".item");
+    $container.appendChild($items[0]);
+  };
+
+  let interval = setInterval(autoPlay, 2000);
+
+  $play.addEventListener("click", () => {
+    if ($play.textContent === "=") {
+      clearInterval(interval);
+      $play.textContent = "|>";
+    } else {
+      interval = setInterval(autoPlay, 2000);
+      $play.textContent = "=";
+    }
+  });
+
   $next.addEventListener("click", () => {
+    const $play = document.querySelector(".play");
+    if ($play.textContent === "=") {
+      clearInterval(interval);
+      $play.textContent = "|>";
+    }
     const $items = document.querySelectorAll(".item");
     $container.appendChild($items[0]);
   });
 
   $prev.addEventListener("click", () => {
+    const $play = document.querySelector(".play");
+    if ($play.textContent === "=") {
+      clearInterval(interval);
+      $play.textContent = "|>";
+    }
     const $items = document.querySelectorAll(".item");
     $container.prepend($items[$items.length - 1]);
   });
