@@ -10,6 +10,9 @@
     "title": "Proyectos",
     "projects": [
       {
+        "description": "Simple formateador de json hecho en Typescript."
+      },
+      {
         "description": "Genera subtitulos en tiempo real en un mini servidor web local con inteligencia artificial en Python."
       },
       { "description": "Pizarra virtual infinita hecha en Typescript." },

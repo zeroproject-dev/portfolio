@@ -10,10 +10,16 @@
     "title": "Projects",
     "projects": [
       {
+        "title": "Json Formatter",
+        "description": "Json formatter from scratch in Typescript with a simple web interface.",
+        "repo": "json-web",
+        "image": "/assets/images/json_formatter.webp"
+      },
+      {
         "title": "Stream subtitles",
         "description": "Real time subtitles on a mini local web server with artificial intelligence in Python.",
         "repo": "stream-subtitles",
-        "image": "https://picsum.photos/200/300"
+        "image": "/assets/images/stream_subtitles.webp"
       },
       {
         "title": "Board",
@@ -51,7 +57,7 @@
         "title": "LSER",
         "description": "Indexer and search engine for local files with a simple web interface.",
         "repo": "lser",
-        "image": "https://picsum.photos/200/300"
+        "image": "/assets/images/lser.webp"
       }
     ]
   },
