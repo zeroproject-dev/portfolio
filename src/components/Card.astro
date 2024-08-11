@@ -12,7 +12,7 @@ const { project } = Astro.props;
 ---
 
 <div
-  class="inline-block w-[165px] h-[130px] absolute rounded-lg bg-center bg-cover transition-all item bottom-16 hover:scale-105 cursor-pointer"
+  class="opacity-1 w-[165px] h-[130px] absolute rounded-lg bg-center bg-cover transition-all item bottom-16 hover:scale-105 cursor-pointer"
   style={`background-image: url(${project.image});`}
 >
   <div class="max-w-[300px] h-full text-left opacity-0 pl-2 content">
@@ -79,7 +79,7 @@ const { project } = Astro.props;
 
   .item:nth-child(n + 7) {
     left: calc(50% + 1000px);
-    display: none;
+    opacity: 0;
   }
 
   .item:nth-child(2) .content {
